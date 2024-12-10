@@ -29,18 +29,31 @@
       </mat-select>
     </mat-form-field>
 
-    <button mat-raised-button color="primary">Check Compliance</button>
+    <!-- Button container -->
+    <div class="form-buttons">
+      <button mat-raised-button color="primary" type="submit">
+        Check Compliance
+      </button>
+      <button
+        mat-raised-button
+        color="accent"
+        type="button"
+        (click)="complianceForm.reset()"
+      >
+        Reset
+      </button>
+    </div>
   </form>
 </div>
 
 <div *ngIf="showFormValues" class="form-values-container">
-    <h3>Form Values:</h3>
-    <div class="form-values">
-      <div *ngFor="let key of getFormValueKeys()">
-        <div class="form-value">
-          <strong>{{ key }}:</strong>
-          <span>{{ complianceForm.value[key] }}</span>
-        </div>
+  <h3>Form Values:</h3>
+  <div class="form-values">
+    <div *ngFor="let key of getFormValueKeys()">
+      <div class="form-value">
+        <strong>{{ key }}:</strong>
+        <span>{{ complianceForm.value[key] }}</span>
       </div>
     </div>
   </div>
+</div>

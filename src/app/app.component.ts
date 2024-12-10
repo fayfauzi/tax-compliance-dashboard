@@ -1,14 +1,14 @@
 import { Component, ViewChild, ViewContainerRef } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { ComplianceCheckerComponent } from './compliance-checker/compliance-checker.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { TaxFilingsComponent } from './tax-filings/tax-filings.component';
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, MatToolbarModule],
+  imports: [MatToolbarModule, MatIconModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })

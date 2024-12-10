@@ -22,7 +22,7 @@ import { CommonModule } from '@angular/common';
     MatSelectModule,
     MatOptionModule,
     MatButtonModule,
-    CommonModule,
+    CommonModule
   ],
   templateUrl: './compliance-checker.component.html',
   styleUrl: './compliance-checker.component.css',
@@ -47,18 +47,15 @@ export class ComplianceCheckerComponent {
 
   formatNumber(event: any) {
     let inputValue = event.target.value;
-    // Remove non-numeric characters except for the decimal point
     inputValue = inputValue.replace(/[^0-9.]/g, '');
-    // Add comma separator for thousands
     event.target.value = inputValue.replace(/\B(?=(\d{3})+(?!\d))/g, ',');
   }
 
   checkCompliance() {
     if (this.complianceForm.valid) {
-      console.log('Compliance Data:', this.complianceForm.value);
       this.showFormValues = true;
     } else {
-      console.error('Form is invalid');
+      console.log('error')
     }
   }
 
