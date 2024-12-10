@@ -1,14 +1,25 @@
 <div class="dashboard">
-    <mat-card>
-      <h3>Total Tax Liability</h3>
-      <p>$50,000</p>
-    </mat-card>
-    <mat-card>
-      <h3>Upcoming Deadlines</h3>
-      <p>3 Deadlines</p>
-    </mat-card>
-    <mat-card>
-      <h3>Pending Compliance Tasks</h3>
-      <p>2 Tasks</p>
-    </mat-card>
-  </div>
+  <mat-card>
+    <h3>Total Tax Liability</h3>
+    <p>$50,000</p>
+  </mat-card>
+  <mat-card>
+    <h3>Upcoming Deadlines</h3>
+    <p>3 Deadlines</p>
+  </mat-card>
+  <mat-card>
+    <h3>Pending Compliance Tasks</h3>
+    <p>2 Tasks</p>
+  </mat-card>
+</div>
+
+<div class="bar-graph" style="display: block">
+  <canvas
+    baseChart
+    [datasets]="barChartData.datasets"
+    [labels]="barChartData.labels"
+    [options]="barChartOptions"
+    [type]="barChartType"
+  >
+  </canvas>
+</div>
