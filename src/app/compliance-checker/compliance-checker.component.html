@@ -1,0 +1,46 @@
+<div class="form-container">
+  <form [formGroup]="complianceForm" (ngSubmit)="checkCompliance()">
+    <mat-form-field>
+      <mat-label>Income</mat-label>
+      <input
+        matInput
+        formControlName="income"
+        type="text"
+        (input)="formatNumber($event)"
+      />
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Expenses</mat-label>
+      <input
+        matInput
+        formControlName="expenses"
+        type="text"
+        (input)="formatNumber($event)"
+      />
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Tax Type</mat-label>
+      <mat-select formControlName="taxType">
+        <mat-option value="income-tax">Income Tax</mat-option>
+        <mat-option value="corporate-tax">Corporate Tax</mat-option>
+        <mat-option value="vat">VAT</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <button mat-raised-button color="primary">Check Compliance</button>
+  </form>
+</div>
+
+<div *ngIf="showFormValues" class="form-values-container">
+    <h3>Form Values:</h3>
+    <div class="form-values">
+      <div *ngFor="let key of getFormValueKeys()">
+        <div class="form-value">
+          <strong>{{ key }}:</strong>
+          <span>{{ complianceForm.value[key] }}</span>
+        </div>
+      </div>
+    </div>
+  </div>

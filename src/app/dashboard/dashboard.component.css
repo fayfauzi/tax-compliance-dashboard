@@ -1,0 +1,11 @@
+.dashboard {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  mat-card {
+    flex: 1;
+    min-width: 200px;
+    padding: 1rem;
+    text-align: center;
+  }

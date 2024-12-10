@@ -1,0 +1,11 @@
+<mat-toolbar color="primary">
+  <span>Tax Compliance Dashboard</span>
+  <span class="spacer"></span>
+  <button mat-button (click)="loadComponent('dashboard')">Dashboard</button>
+  <button mat-button (click)="loadComponent('complianceChecker')">
+    Compliance Checker
+  </button>
+  <button mat-button (click)="loadComponent('taxFilings')">Tax Filings</button>
+</mat-toolbar>
+
+<ng-template #dynamicComponent></ng-template>
