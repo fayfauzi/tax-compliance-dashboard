@@ -1,0 +1,35 @@
+.table-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+mat-table {
+  width: 80%;
+  text-align: center;
+}
+
+th,
+td {
+  text-align: center;
+}
+
+.status-completed {
+  color: white;
+  background-color: green;
+}
+
+.status-pending {
+  color: black;
+  background-color: yellow;
+}
+
+.status-failed {
+  color: white;
+  background-color: red;
+}
+
+mat-cell {
+  text-align: center;
+}

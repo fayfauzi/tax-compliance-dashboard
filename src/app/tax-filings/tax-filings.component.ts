@@ -1,10 +1,11 @@
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { MatTableModule } from '@angular/material/table';
 
 @Component({
   selector: 'app-tax-filings',
   standalone: true,
-  imports: [MatTableModule],
+  imports: [MatTableModule, CommonModule],
   templateUrl: './tax-filings.component.html',
   styleUrl: './tax-filings.component.css',
 })
@@ -27,4 +28,17 @@ export class TaxFilingsComponent {
   ];
 
   displayedColumns: string[] = ['type', 'deadline', 'status'];
+
+  getStatusClass(status: string): string {
+    switch (status.toLowerCase()) {
+      case 'completed':
+        return 'status-completed';
+      case 'pending':
+        return 'status-pending';
+      case 'failed':
+        return 'status-failed';
+      default:
+        return '';
+    }
+  }
 }
